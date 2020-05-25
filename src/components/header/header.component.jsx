@@ -1,14 +1,12 @@
 import React from 'react';
-import './header.styles.scss';
+import { HeadrContainer, HeaderTitle } from './header.styles.styled';
+const Header = () => {
+	return (
+		<HeadrContainer>
+			<HeaderTitle>Simple To-do</HeaderTitle>
+			<HeaderTitle>Enhance your productivity</HeaderTitle>
+		</HeadrContainer>
+	);
+};
 
-
-const Header=()=>{
-     return <div className="header">
-
-                <h2>Simple To-do</h2>
-                <h2>Enhance your productivity</h2>
-
-            </div>
-}
-
-export  default Header;
+export default Header;

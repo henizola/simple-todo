@@ -1,30 +1,32 @@
 import React from 'react';
-import './task.styles.scss';
+import { Table, Number, Name, Remove } from './task.styles.style';
 
 const List = ({ tasks, searchField, removeItem }) => {
 	return (
 		<div className='list'>
-			<table className='display'>
+			<Table>
 				<tbody>
 					{tasks.map((task, index) =>
 						task.includes(searchField) ? (
 							<tr key={index}>
-								<td className='number'># {index + 1}</td>
-								<td className='name'>{task}</td>
-								<td
+								<Number className='number'>
+									# {index + 1}
+								</Number>
+								<Name>{task}</Name>
+								<Remove
 									onClick={() => removeItem(index)}
 									className='remove'
 								>
 									{' '}
 									X{' '}
-								</td>
+								</Remove>
 							</tr>
 						) : (
 							<tr key={index}></tr>
 						)
 					)}
 				</tbody>
-			</table>
+			</Table>
 		</div>
 	);
 };

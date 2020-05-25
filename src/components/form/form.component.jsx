@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
-import './form.styles.scss';
+import { FormContainer, Input, Submit } from './form.styles.styled.jsx';
 
 const Form = ({ addItem }) => {
 	const [item, setItem] = useState('');
 
 	return (
-		<form
+		<FormContainer
 			onSubmit={event => {
 				event.preventDefault();
 				addItem(item);
 				setItem('');
 			}}
 		>
-			<input
+			<Input
 				type='text'
 				value={item}
 				onChange={event => setItem(event.target.value)}
 				required
 			/>
-			<button className='submit' type='submit'>
-				Add Item
-			</button>
-		</form>
+			<Submit type='submit'>Add Item</Submit>
+		</FormContainer>
 	);
 };
 

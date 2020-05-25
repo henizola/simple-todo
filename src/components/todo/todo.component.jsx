@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Task from '../task/task.component';
 import Form from '../form/form.component';
-import './todo.styles.scss';
 import { todo } from './todo.util';
+import { TodoContainer, AddButton, TodoC, Title } from './todo.styles.styled';
+import { Remove } from './todo.styles.styled';
+import { Input } from '../form/form.styles.styled';
 
 const Todo = () => {
 	const [tasks, setTasks] = useState([]);
@@ -23,9 +25,9 @@ const Todo = () => {
 	useEffect(() => setTasks(todo), []);
 
 	return (
-		<div className='todo'>
+		<TodoContainer>
 			<Form addItem={addItem} />
-			<input
+			<Input
 				type='text'
 				placeholder='search'
 				onChange={event =>
@@ -33,22 +35,20 @@ const Todo = () => {
 				}
 				className='search'
 			/>
-			<button className='add' onClick={() => setTasks(todo)}>
-				Reset List
-			</button>
-			<div className='todo-list'>
-				<div className='title'>
+			<AddButton onClick={() => setTasks(todo)}>Reset List</AddButton>
+			<TodoC>
+				<Title>
 					<h2># </h2>
 					<h2> ToDo</h2>
-				</div>
-				<h4 className='remove'> X </h4>
-			</div>
+				</Title>
+				<Remove> X </Remove>
+			</TodoC>
 			<Task
 				tasks={tasks}
 				searchField={searchField}
 				removeItem={removeItem}
 			/>
-		</div>
+		</TodoContainer>
 	);
 };
 export default Todo;
