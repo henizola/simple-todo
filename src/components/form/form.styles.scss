@@ -1,25 +1,29 @@
-form{
-    display:flex;
-    flex-direction: column;
-.submit{
-       margin: center;
-       color: aqua;
-    background-color: darkslategray;
-    width:200px;
-    font-size: large;
-    height:25px;
-    margin:auto;
-    margin-top: 10px;
-   }
-  
+form {
+	display: flex;
+	flex-direction: column;
+	.submit {
+		margin: center;
+		color: aqua;
+		background-color: darkslategray;
+		width: 200px;
+		font-size: large;
+		height: 25px;
+		margin: auto;
+		margin-top: 10px;
+		border: none;
+		&:hover {
+			background-color: rgb(70, 100, 100);
+		}
+	}
 }
-input{
-    color: aqua;
-    background-color: darkslategray;
-    height:25px;
-    font-size: large;
-    width:250px;
-    margin: auto;
-    text-align: center;
-    margin-top: 10px;
+input {
+	color: aqua;
+	background-color: darkslategray;
+	height: 25px;
+	font-size: large;
+	width: 250px;
+	margin: auto;
+	text-align: center;
+	margin-top: 10px;
+	border: none;
 }
